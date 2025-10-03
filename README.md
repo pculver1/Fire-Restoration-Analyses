@@ -9,15 +9,21 @@ The analysis and manuscript were created using **R** and **Quarto**.
 - **data/** – Supporting dataset(s) used in the analysis.
 - **figures/** – Exported plots and figures.
 
-## Results
-
-Here is an example plot from the analysis:
-
-![Understory Percent Cover](figures/understory_boxplot.png)
-
 ## How to Reproduce
 1. Install [R](https://cran.r-project.org/) and [Quarto](https://quarto.org/).
 2. Open `fire_ecology.qmd` in RStudio or VS Code.
 3. Run:
    ```bash
    quarto render fire_ecology.qmd
+## Results
+
+Here is an example plot from the analysis:
+
+![Understory Percent Cover](figures/understory_boxplot.png)
+
+## Data Sources
+- Student-collected field data (Boise State University, Fall 2023).  
+- Supplementary climate data from [NOAA](https://www.noaa.gov/).
+
+## License
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
