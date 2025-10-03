@@ -7,7 +7,7 @@ The analysis and manuscript were created using **R** and **Quarto**.
 - **fire_ecology.qmd** – Quarto source file with R code, analysis, and narrative.
 - **fire_ecology.html** – Rendered version of the paper for easy viewing.
 - **data/** – Supporting dataset(s) used in the analysis.
-- **figures/** – Exported plots and figures (if applicable).
+- **figures/** – Exported plots and figures.
 
 ## Results
 
