@@ -1,0 +1,250 @@
+---
+title: "Post-fire Rehabilitation Efficacy of an Intermountain West Shrub-steppe Plant Community with an Understory Dominated by Invasive Plant Species."
+author:
+  - name: Patrick Culver
+    affiliation: Arizona State University
+    email: patrickculver1@gmail.com
+subtitle: "Deer Flat Refuge, 2003 Sage Fire"
+date: 09/20/2025
+---
+
+[**Introduction**]{.underline}
+
+Fire frequency and ferocity within the Intermountain West have risen sharply with the introduction of non-native invasive species such as *Bromus tectorum* (Cheatgrass). Cheatgrass has high success rates in the Intermountain West due to its ability to germinate in autumn months, grow through winter, and seed in the spring. Native vegetation struggles to compete with winter annuals such as *B. tectorum* over water and soil nutrients, allowing *B. tectorum* to dominate understory cover (D’Antonio and Vitousek 1992). Arid summer months in the Intermountain West cause cheatgrass to dry out and die, creating optimal conditions for fires. Fire intensity is especially strong in the summer months following El Niño cycles, where increased precipitation causes a buildup of *B. tectorum,* and as it spreads and grows in biomass, it dominates understory coverage in shrub-steppe ecosystems (Balch et. al 2013). Heightened fire conditions are problematic for shrub-steppe ecosystems as native plants such as *Artemisia tridentata* (Mountain Big Sagebrush) and understory bunchgrasses are poorly adapted to increased fire frequency (Brooks, et al. 2004).
+
+One of the biggest problems that native species such as *A. tridentata* face in an ecosystem with an increasing fire frequency is that unlike the invasive *B. tectorum, Artemisia tridentata* and native understory vegetation recover poorly from fires. Mountain Big Sagebrush has been shown to recover slowly in post-fire ecosystems, ranging from 25-35 years and at times exceeding 75 years (Nelson et al. 2014).
+
+Increasing fire frequency has great ecological and economic impacts. A wide range of species depend on the Intermountain West’s native shrub-steppe habitats, ranging from pygmy rabbits to mule deer. Combating these fires is expensive. In the U.S., from 2010 to 2015, \$9,480,096,000 was spent on fire suppression alone (USDA 2016) which does not account for property damage or post-fire restoration efforts. Post-fire rehabilitation is vital not only for restoring ecological systems, but also as an important component in mitigating fire frequencies, erosion, and flooding.
+
+In early July 2003, a fire termed “Sage Fire” burned through 86 acres of shrub-steppe landscape in Deer Flat Wildlife Refuge in Nampa, Idaho. The pre-fire shrub-steppe community included the native vegetation: spiny hopsage, basin big sagebrush, Indian rice grass, great basin wild rye grass, blue basin wheat grass, and Idaho fescue. Non-native species included cheatgrass, crested wheat grass, and Russian thistle (Patton, 2003).  To rehabilitate the burned area, managers applied an herbicide (Plateau®) to reduce or prevent the spread of cheatgrass. They then seeded the area with a mixture of the understory grasses: Indian rice grass *Achminoides hymenoides,* Great Basin wildrye *Leymus cinereus,* Snake River wheatgrass *Pseudoroegneria spicata,* Thickspike wheatgrass *Elymus lanceolatus*, Sand dropseed *Sporobolus cryptandrus,* and Needle and thread grass *Stipa comata*. Overstory seeding included Basin Big Sagebrush and wing saltbush*.* The cost of the fire suppression and rehabilitation at the Sage Fire was \$43,724.97. The objective of the rehabilitation was to restore burned overstory density and understory coverage to pre-fire conditions while reducing cheatgrass coverage (Patton, 2003).
+
+Since post-fire rehabilitation is an economically costly practice, it is important to determine if restoration techniques are effective and cost-beneficial. Post-fire rehabilitation is also critical, as it might be the only way to reduce increasing fire frequency in the Intermountain West. The objective of this study is to evaluate the efficacy of the Sage Fire’s rehabilitation efforts by examining overstory density and understory coverage in burned/seeded and unburned areas of the Sage Fire in Deer Flat National Refuge, Nampa, Idaho.
+
+If rehabilitation efforts were successful, we expected to see no statistical difference in cheatgrass coverage between the burned/seeded and unburned areas. We also expect to see no statistical difference between native bunchgrass coverage in burned/seeded and unburned areas. With a successful rehabilitation, we also expected no significant difference in other non-native invasives between the treatment groups. Finally, with a successful restoration of sagebrush, we expected no statistical difference in overstory density.
+
+[**Materials and Methods**]{.underline}
+
+o *Transect Establishment in Burned/Unburned treatments*\
+In September of 2016, we sampled burned/seeded and unburned areas at Deer Flat Refuge, Nampa Idaho. Treatment groups were divided between burned/seeded and unburned to evaluate the efficacy fire rehabilitation in the burned area, using the unburned treatment as a control. GPS units were used to navigate to 18 randomly determined transects in each treatment group. Each transect was established by anchoring one end of a measuring tape at a fixed location, which was then extended 50 m to the opposite end of that specific transect (navigation via GPS unit).  Ten survey flags were placed along the tape measure at randomly selected meters within each transect, yielding 180 random samples per treatment.
+
+![](images/clipboard-2601731756.png){width="496"}
+
+o *Understory Coverage Estimates*
+
+Quadrat sampling estimated understory percent cover using 1 m² quadrats at each of the 10 random intervals along all 18 transects in both treatments. Within each quadrat, cover was classified as native, non-native (other), or cheatgrass (*Bromus tectorum*). Cover-class midpoints were used to quantify percent cover across the 180 quadrats per treatment. We compared treatments with three Welch’s t-tests (unequal variances): native cover, cheatgrass cover, and other non-native cover (unburned vs. burned/seeded).
+
+o *Overstory Density*
+
+We used the point-quarter method to estimate the density of native overstory species, including sagebrush (*Artemisia tridentata*), gray rabbitbrush (*Chrysothamnus nauseosus*), and ourwing saltbush (*Atriplex canescens*). Each plot was divided into quarters; distances from plot center to the nearest overstory plant in each quadrant were measured with a rangefinder (\> 15 m) or tape (\< 15 m). The mean distance per plot was the average of the four quadrants, and density (plants/ha) was computed as 10,000 / (mean distance)². We summarized by treatment and compared with Welch’s t-tests.
+
+[**Results:**]{.underline}
+
+o *Understory Coverage*
+
+```{r}
+#| include: false
+#library for all analyses
+library(tidyverse);library(dplyr);library(mosaic);library(tidyr);library(readxl);library(readr);library(broom);library(flextable);library(knitr);library(gridExtra);library(grid);library(dplyr); library(tidyr); library(readr);library(flextable); library(officer); library(webshot2);library(purrr); library(stringr)
+
+#load understory data from excel xlsx sheet
+understory <- read_excel("C:\\Users\\patri\\Desktop\\Fire Ecology Project\\data\\understory.xlsx")
+```
+
+```{r}
+#| echo: false
+make_row <- function(metric, x, y) {
+  tt <- t.test(x, y, var.equal = FALSE)  # Welch
+  data.frame(
+    Metric                = metric,
+    `n (Burned)`          = sum(!is.na(x)),
+    `n (Unburned)`        = sum(!is.na(y)),
+    `Mean (Burned)`       = mean(x, na.rm = TRUE),
+    `Mean (Unburned)`     = mean(y, na.rm = TRUE),
+    `Δ (Burned − Unburned)` = unname(tt$estimate[1] - tt$estimate[2]),
+    `95% CI`              = sprintf("[%.2f, %.2f]", tt$conf.int[1], tt$conf.int[2]),
+    t                     = unname(tt$statistic),
+    df                    = unname(tt$parameter),
+    p                     = tt$p.value,
+    check.names           = FALSE
+  )
+}
+
+tab <- bind_rows(
+  make_row("Cheatgrass",
+           understory$cheatgrass_burned, understory$cheatgrass_unburned),
+  make_row("Native bunchgrasses",
+           understory$native_species_burned, understory$native_species_unburned),
+  make_row("Other non-native",
+           understory$other_non_native_burned, understory$other_non_native_species_unburned),
+  make_row("Crested wheatgrass",
+           understory$crested_wheatgrass_burned, understory$crested_wheatgrass_unburned)
+) |>
+  mutate(
+    across(c(`Mean (Burned)`, `Mean (Unburned)`, `Δ (Burned − Unburned)`), ~ round(., 2)),
+    t  = round(t, 2),
+    df = round(df, 2),
+    p  = format.pval(p, digits = 3, eps = 1e-3)
+  )
+
+knitr::kable(
+  tab,
+  caption = "Figure 2. Welch two-sample t-tests for understory percent cover (Burned vs Unburned). Δ = mean(Burned) − mean(Unburned).",
+  align   = c("l","r","r","r","r","r","c","r","r","r")
+)
+```
+
+```{r}
+#| echo: false
+#visualize understory data with boxplots
+# --- 1) Long format from your columns ---
+long <- tibble(
+  Cheatgrass_Burned   = understory$cheatgrass_burned,
+  Cheatgrass_Unburned = understory$cheatgrass_unburned,
+  Native_Burned       = understory$native_species_burned,
+  Native_Unburned     = understory$native_species_unburned,
+  Other_Burned        = understory$other_non_native_burned,
+  Other_Unburned      = understory$other_non_native_species_unburned
+) |>
+  pivot_longer(everything(), names_to = "key", values_to = "cover") |>
+  filter(!is.na(cover)) |>
+  mutate(
+    Metric = case_when(
+      str_starts(key, "Cheatgrass") ~ "Cheatgrass",
+      str_starts(key, "Native")     ~ "Native bunchgrasses",
+      str_starts(key, "Other")      ~ "Other non-native",
+      TRUE ~ "Other"
+    ),
+    Treatment = if_else(str_ends(key, "Burned"), "Burned/Seeded", "Unburned")
+  ) |>
+  select(Metric, Treatment, cover) |>
+  mutate(
+    Metric    = factor(Metric, levels = c("Cheatgrass","Native bunchgrasses","Other non-native")),
+    Treatment = factor(Treatment, levels = c("Burned/Seeded","Unburned"))
+  )
+
+# --- 2) Boxplots (no violins, clean caption) ---
+
+
+p_box <- ggplot(long, aes(Treatment, cover)) +
+  geom_boxplot(width = 0.5, outlier.alpha = 0.5) +
+  facet_wrap(~ Metric, ncol = 1, scales = "fixed") +
+  scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, 20)) +
+  labs(
+    title = "Understory percent cover by treatment",
+    x = NULL, y = "Percent cover",
+    caption = "Figure 3. Boxplots of understory percent cover by treatment (one panel per metric). Boxes show IQR
+    with median lines; whiskers = 1.5×IQR; points beyond whiskers are outliers. Percent cover is bounded 
+    0–100%. Inference reported in text uses Welch’s t-test on the original scale."
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(plot.caption = element_text(hjust = 0))
+p_box
+
+```
+
+**Interpretation**. Cheatgrass was the dominant understory taxon in both treatments and was higher in burned/seeded than in unburned areas (≈ 65% vs. 56%; p = 0.0024). The unburned treatment had greater other non-native cover (≈ 14% vs. 8.5%; p ≈ 0.0023). Native bunchgrasses were low overall but higher in burned/seeded (≈ 3.7% vs. \<1%; p ≈ 2.6×10⁻⁶). Frequencies reflected these patterns: cheatgrass occurred in 100% of quadrats in both treatments; native bunchgrasses occurred in 28% of quadrats in burned/seeded vs. 1% in unburned.
+
+o *Overstory Density*
+
+```{R}
+#| echo: false
+
+#load overstory data from excel xlsx
+
+overstory <- read_excel("C:\\Users\\patri\\Desktop\\Fire Ecology Project\\data\\overstory data.xlsx")
+
+#add table with Cumulative Standard Deviation, Mean, Median, confidence interval, and Welch p-values of Overstory data between Unburned and Burned/Seeded treatment areas
+
+#| label: tbl-overstory
+#| echo: false
+#| message: false
+#| warning: false
+
+library(knitr)
+
+# helper: coerce to numeric if read as text
+numify <- function(x) if (is.numeric(x)) x else as.numeric(gsub("[^0-9eE\\.\\-]", "", as.character(x)))
+
+burn   <- numify(overstory$plants_per_ha_burned)
+unburn <- numify(overstory$plants_per_ha_unburned)
+
+summ <- function(x) c(
+  n      = sum(!is.na(x)),
+  Mean   = mean(x, na.rm = TRUE),
+  SD     = sd(x, na.rm = TRUE),
+  Median = median(x, na.rm = TRUE),
+  IQR    = IQR(x, na.rm = TRUE)
+)
+
+sb <- summ(burn); su <- summ(unburn)
+tt <- t.test(burn, unburn, var.equal = FALSE)  # Welch
+
+tab_overstory <- data.frame(
+  Treatment   = c("Burned", "Unburned", "Delta (Burned - Unburned)"),
+  n           = c(sb["n"], su["n"], NA),
+  Mean        = c(sb["Mean"], su["Mean"], sb["Mean"] - su["Mean"]),
+  SD          = c(sb["SD"], su["SD"], NA),
+  Median      = c(sb["Median"], su["Median"], NA),
+  IQR         = c(sb["IQR"], su["IQR"], NA),
+  `95% CI`    = c("", "", sprintf("[%.2f, %.2f]", tt$conf.int[1], tt$conf.int[2])),
+  df          = c("", "", sprintf("%.2f", unname(tt$parameter))),
+  `p (Welch)` = c("", "", sprintf("%.3f", tt$p.value)),
+  check.names = FALSE
+)
+
+# round numeric columns
+is_num <- sapply(tab_overstory, is.numeric)
+tab_overstory[ , is_num] <- lapply(tab_overstory[ , is_num], function(z) ifelse(is.na(z), NA, round(z, 2)))
+
+kable(
+  tab_overstory,
+  caption = "Figure 4. Overstory density (plants/ha): summary by treatment and Welch's two-sample t-test for the mean difference (Burned - Unburned).",
+  align   = c("l","r","r","r","r","r","c","r","r")
+)
+```
+
+**Interpretation.** Mean overstory density did not differ significantly between treatments (substantial overlap; p ≈ 0.61). This suggests overstory recovery in the burned/seeded area is underway but likely not yet at pre-fire conditions.
+
+[**Discussion:**]{.underline}
+
+We did not detect a statistically significant difference in overstory density between burned/seeded and unburned areas, indicating meaningful overlap in current densities and suggesting that full sagebrush recovery will take longer. Given the study occurred \~13 years after the 2003 Sage Fire, and recovery timelines for *A. tridentata* can span decades, these findings are consistent with gradual overstory recovery. However, cheatgrass dominance in the understory indicates elevated risk of frequent, high-intensity fires in shrub-steppe systems—especially where cheatgrass cover is high.
+
+Cheatgrass suppression in this restoration appears insufficient. Despite herbicide application and seeding, B. tectorum likely outcompeted native bunchgrasses by occupying interspaces and exploiting nitrogen-rich soils, while many seeded natives do not germinate in fall. Species that both fix nitrogen and germinate in fall may compete more effectively with cheatgrass. Continued monitoring and careful post-fire seed selection are critical: while fires can briefly reduce the cheatgrass seed bank, populations often rebound within a year, narrowing the window for native re-establishment.
+
+Burned/seeded areas showed higher native bunchgrass cover and lower other non-native cover compared with unburned areas, suggesting some benefit of seeding. Nonetheless, native cover remained low (\~3.7%), and cheatgrass remained high, so fuel continuity and fire risk persist.
+
+***Management implications***
+
+From a fire-prevention standpoint, outcomes were mixed: cheatgrass remained dominant, implying continued fuel continuity and elevated risk. At the same time, burned/seeded areas showed modest gains in native bunchgrasses and reduced other non-native cover, and overstory density appears to be recovering. While wildlife use was not measured directly, these vegetation shifts are consistent with improved forage and cover structure for shrub–steppe species. To align ecological and fuels objectives, we recommend adaptive follow-up that (i) prioritizes cheatgrass suppression, (ii) incorporates fall-germinating, competitive natives in seed mixes, and (iii) maintains vegetation—and where feasible, wildlife—monitoring to verify habitat benefits.
+
+[**Experimental evaluation and improvements**]{.underline}
+
+Because multiple field teams collected data, visual cover estimates may vary among observers. Dividing each 1 m² quadrat into tenths (or using point-intercept) could reduce observer variance. Overstory density estimates could be improved by standardizing rangefinder calibration; in multi-team settings, total counts or belt transects may be preferable. Finally, designating a strict control area would improve inference about rehabilitation effects.
+
+[**Conclusion**]{.underline}
+
+Rehabilitation produced partial ecological gains—higher native bunchgrass cover and lower other non-native cover—alongside ongoing overstory recovery but did not achieve fuels objectives because cheatgrass cover remained high. Consequently, fire risk is likely to remain elevated. Although we did not measure wildlife directly, the vegetation structure observed is compatible with habitat improvement for shrub–steppe fauna. Future work should pair targeted cheatgrass control with seed mixes favoring fall-germinating natives and continue monitoring to confirm both fuels reduction and habitat outcomes over time.
+
+**Literature Cited**
+
+Baker, W. L. (2006). Fire and Restoration of Sagebrush Ecosystems. *Wildlife Society Bulletin,* *34*(1), 177-185. doi:10.2193/0091-7648(2006)34\[177:farose\]2.0.co;2
+
+Balch, J. K., Bradley, B. A., D'Antonio, C. M., & Gómez-Dans, J. (2013). Introduced annual grass increases regional fire activity across the arid western USA (1980-2009). *Global Change Biology*, *19*(1), 173-183. doi:10.1111/gcb.12046
+
+Barak, R. S., Fant, J. B., Kramer, A. T., & Skogen, K. A. (2015). Assessing the Value of Potential 'Native Winners' for Restoration of Cheatgrass-Invaded Habitat. *Western North American Naturalist*, *75*(1), 58-69. doi:10.3398/064.075.0107
+
+Bradford, J. B., & Lauenroth, W. K. (2006). Controls over invasion of Bromus tectorum: The importance of climate, soil, disturbance and seed availability. *Journal Of Vegetation Science*, *17*(6), 693-704.
+
+Brooks, M. L., D'Antonio, C. M., Richardson, D. M., Grace, J. B., Keeley, J. E., Ditomaso, J. M., & ... Pyke, D. (2004). Effects of Invasive Alien Plants on Fire Regimes. *Bioscience*, *54*(7), 677-688
+
+D'antonio, C., & Vitousek, P. M. (1992). Biological Invasions by Exotic Grasses, the Grass Fire Cycle, and Global Change. Annual Review of Ecology and Systematics, 23(1), 63-87. doi:10.1146/annurev.ecolsys.23.1.63
+
+Humphrey, L. D., and E. W. Schupp. 2001. Seed banks of Bromustectorum-dominated communities in the Great Basin. West-ern North American Naturalist
+
+Nelson, Z. J., Weisberg, P. J., & Kitchen, S. G. (2014). Influence of climate and environment on post-fire recovery of mountain big sagebrush. *International Journal of Wildland Fire*, *23*(1), 131-142.
+
+Patton, W. W. (2003, August 15). Sage Fire Emergency Stabilization and Rehabilitation (ESR) Plan. Retrieved October 16, 2016, from <https://www.fws.gov/fire/downloads/ES_BAR/sageFire.pdf>
+
+Paysen, Timothy E.; Ansley, R. James; Brown, James K.; Gottfried, Gerald J.; Haase, Sally M.; Harrington, Michael G.; Narog, Marcia G.; Sackett, Stephen S.; Wilson, Ruth C. 2000. Fire in western shrubland, woodland, and grassland ecosystems. In: Brown, James K.; Smith, Jane Kapler, eds. Wildland fire in ecosystems: Effects of fire on flora. Gen. Tech. Rep. RMRS-GTR-42-vol. 2. Ogden, UT: U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station: 121-159.
+
+USDA, Cost of Fire Operations. (n.d.). Retrieved November 1, 2016, from http://www.fs.fed.us/about-agency/budget-performance/cost-fire-operations
